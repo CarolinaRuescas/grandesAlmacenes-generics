@@ -2,17 +2,22 @@ package org.ies.grandesAlmacenes.model;
 
 import java.util.Objects;
 
-public class clothes extends product{
+public class Clothes extends Product {
 
     private String type;
     private String size;
     private String brand;
 
-    public clothes(int id, int price, int amount, String type, String size, String brand) {
+    public Clothes(int id, int price, int amount, String type, String size, String brand) {
         super(id, price, amount);
         this.type = type;
         this.size = size;
         this.brand = brand;
+    }
+
+    @Override
+    public void info() {
+        System.out.println("Prenda de ropa (" + id + "): Precio " + price + ", unidades " + amount);
     }
 
     public String getType() {
@@ -44,7 +49,7 @@ public class clothes extends product{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        clothes clothes = (clothes) o;
+        Clothes clothes = (Clothes) o;
         return Objects.equals(type, clothes.type) && Objects.equals(size, clothes.size) && Objects.equals(brand, clothes.brand);
     }
 

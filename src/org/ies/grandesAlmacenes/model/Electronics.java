@@ -2,17 +2,22 @@ package org.ies.grandesAlmacenes.model;
 
 import java.util.Objects;
 
-public class electronics extends product{
+public class Electronics extends Product {
 
     private String type;
     private String model;
     private String manufacturer;
 
-    public electronics(int id, int price, int amount, String type, String model, String manufacturer) {
+    public Electronics(int id, int price, int amount, String type, String model, String manufacturer) {
         super(id, price, amount);
         this.type = type;
         this.model = model;
         this.manufacturer = manufacturer;
+    }
+
+    @Override
+    public void info() {
+        System.out.println("Díspositivo electrónico (" + id + "): Precio " + price + ", unidades " + amount);
     }
 
     public String getType() {
@@ -44,7 +49,7 @@ public class electronics extends product{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        electronics that = (electronics) o;
+        Electronics that = (Electronics) o;
         return Objects.equals(type, that.type) && Objects.equals(model, that.model) && Objects.equals(manufacturer, that.manufacturer);
     }
 

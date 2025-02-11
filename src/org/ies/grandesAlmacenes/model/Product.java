@@ -2,16 +2,17 @@ package org.ies.grandesAlmacenes.model;
 
 import java.util.Objects;
 
-public abstract class product {
+public abstract class Product {
     protected int id;
     protected int price;
     protected int amount;
 
-    public product(int id, int price, int amount) {
+    public Product(int id, int price, int amount) {
         this.id = id;
         this.price = price;
         this.amount = amount;
     }
+    public abstract void info();
 
     public int getId() {
         return id;
@@ -41,7 +42,7 @@ public abstract class product {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        product product = (product) o;
+        Product product = (Product) o;
         return id == product.id && price == product.price && amount == product.amount;
     }
 
